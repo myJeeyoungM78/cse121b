@@ -1,0 +1,25 @@
+03/30/2024
+CSE 121B
+Br. Chase Lundell
+Student : Jeeyoung Madsen
+
+W05 Application Project Idea / Proposal
+
+* Get random emoji
+    GET https://emojihub.yurace.pro/api/random
+
+    {
+    "name": "hugging face",
+    "category": "smileys and people",
+    "group": "face positive",
+    "htmlCode": ["&#129303;"],
+    "unicode": ["U+1F917"]
+    }
+
+* Get an array of all emojis
+    GET https://emojihub.yurace.pro/api/all
+
+* Each endpoint can be supplemented by al path to a specific category or group:
+    /category/{category-name}
+    /group/{group-name}
+
