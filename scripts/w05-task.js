@@ -9,11 +9,10 @@ const displayTemples = (temples) => {
     temples.forEach((element) => {
         const article = document.createElement('article');
         const t_name = document.createElement('h3');
-        t_name.setAttribute("templeName", element.templeName);
+        t_name.innerText=element.templeName;
         const t_img = document.createElement('img');
         t_img.setAttribute('src', element.imageUrl);
         t_img.setAttribute('alt', element.location);
-    
         article.appendChild(t_name);
         article.appendChild(t_img);
         templesElement.appendChild(article);
@@ -28,8 +27,8 @@ const getTemples = async () => {
     {
         const t_list = await response.json();
         templeList = t_list;
-        displayTemples(templeList);
-        console.log(templeList);
+        //displayTemples(templeList);
+        filterTemples(templeList);
     }
 }
 
@@ -71,7 +70,8 @@ function filterTemples(temples) {
         let alpha = temples.sort(function(a,b){return a.templeName.localeCompare(b.templeName);});
         displayTemples(alpha);
         break;
-
+        default:
+            displayTemples(templeList);
     }
 }
 
